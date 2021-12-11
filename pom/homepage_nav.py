@@ -1,5 +1,6 @@
 from base.seleniumbase import SeleniumBase
 from selenium.webdriver.remote.webelement import WebElement
+from typing import List
 
 
 class HomepageNav(SeleniumBase):
@@ -8,6 +9,8 @@ class HomepageNav(SeleniumBase):
         self.driver = driver
         self.__nav_links: str = '#mainNavigationFobs>li'
 
-    def get_nav_links(self) -> WebElement:
+    def get_nav_links(self) -> List[WebElement]:
         return self.are_visible('css', self.__nav_links, 'Header Navigation Links')
 
+    def get_nav_links_text(self):
+        nav_links = self.get_nav_links()
