@@ -7,7 +7,9 @@ class TestHomepage:
 
     def test_homepage(self):
         homepage_nav = HomepageNav(self.driver)
-        print(homepage_nav.get_nav_links_text())
+        actual_links = homepage_nav.get_nav_links_text()
+        expected_links = homepage_nav.NAV_LINKS_TEXT
+        assert expected_links == actual_links, 'Validating nav links'
 
 
 

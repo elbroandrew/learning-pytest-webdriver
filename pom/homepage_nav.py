@@ -8,6 +8,8 @@ class HomepageNav(SeleniumBase):
         super().__init__(driver)
         self.driver = driver
         self.__nav_links: str = '#mainNavigationFobs>li'
+        self.NAV_LINKS_TEXT = 'Women,Men,Kids & Baby,Home,Shoes,Handbags & Accessories,Jewelry,Sale'
+        
 
     def get_nav_links(self) -> List[WebElement]:
         return self.are_visible('css', self.__nav_links, 'Header Navigation Links')
