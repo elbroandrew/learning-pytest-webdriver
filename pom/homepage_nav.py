@@ -1,6 +1,7 @@
 from base.seleniumbase import SeleniumBase
 from selenium.webdriver.remote.webelement import WebElement
 from typing import List
+from base.utils import Utils
 
 
 class HomepageNav(SeleniumBase):
@@ -17,4 +18,4 @@ class HomepageNav(SeleniumBase):
     def get_nav_links_text(self) -> str:
         nav_links = self.get_nav_links()
         nav_links_text = self.get_text_from_webelements(nav_links)
-        return ",".join(nav_links_text)
+        return Utils.join_strings(nav_links_text)
