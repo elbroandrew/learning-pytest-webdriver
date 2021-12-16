@@ -54,4 +54,4 @@ class SeleniumBase:
 
     def get_element_by_text(self, elements: List[WebElement], name: str) -> WebElement:
         name = name.lower()
-        return [element for element in elements if element.text == name][0]
+        return [element for element in elements if element.text.lower() == name][0]
