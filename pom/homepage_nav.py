@@ -19,3 +19,7 @@ class HomepageNav(SeleniumBase):
         nav_links = self.get_nav_links()
         nav_links_text = self.get_text_from_webelements(nav_links)
         return Utils.join_strings(nav_links_text)
+
+    def get_nav_link_name(self, name) -> WebElement:
+        elements = self.get_nav_links()
+        return self.get_element_by_text(elements, name)
