@@ -14,9 +14,10 @@ class TestHomepage:
         expected_links = homepage_nav.NAV_LINKS_TEXT
         assert expected_links == actual_links, 'Validating nav links'
         #homepage_nav.get_nav_link_by_name('Home').click()
-        elements = homepage_nav.get_nav_links()
-        for element in elements:
-            element.click()
+        #elements = homepage_nav.get_nav_links()
+        for idx in range(8):
+            homepage_nav.get_nav_links()[idx].click()
+            homepage_nav.driver.delete_all_cookies()
             time.sleep(2)
 
 
