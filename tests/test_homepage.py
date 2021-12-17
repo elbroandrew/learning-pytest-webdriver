@@ -13,7 +13,10 @@ class TestHomepage:
         actual_links = homepage_nav.get_nav_links_text()
         expected_links = homepage_nav.NAV_LINKS_TEXT
         assert expected_links == actual_links, 'Validating nav links'
-        homepage_nav.get_nav_link_by_name('Home').click()
-        time.sleep(2)
+        #homepage_nav.get_nav_link_by_name('Home').click()
+        elements = homepage_nav.get_nav_links()
+        for element in elements:
+            element.click()
+            time.sleep(2)
 
 
